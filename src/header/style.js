@@ -13,6 +13,7 @@ export const Header = styled.header`
     height: 8vh;
     width: 80%;
     margin: auto;
+    overflow: hidden;
 `;
 export const Logo = styled.header`
 
@@ -34,10 +35,11 @@ export const NavList = styled.ul`
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        background-color: red;
+        background-color: green;
         width: 90vw;
         height: 92vh;
-        /* transform: translateX(100%); */
+        transition: all .2s linear;
+        transform: translateX(${props => props.active? '0' : '100%'});
     }
 `;
 export const NavLink = styled.li`
