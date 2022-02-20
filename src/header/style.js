@@ -34,10 +34,11 @@ export const NavList = styled.ul`
     
     @media screen and (max-width: 500px) {
         flex-direction: column;
-        height: auto;
-        transition: all .2s linear;
-        ${({toggled}) => (toggled ? '':'transform: translateX(100%);')}
+        height: 100vh;
+        justify-content: start;  
+        transition: all .2s linear ;
     }
+
 `;
 export const NavLink = styled.li`
     margin-right: 20px;
@@ -47,13 +48,14 @@ export const NavLink = styled.li`
 
     @media screen and (max-width: 500px) {
         &:nth-child(1){
+            border-top: none;
             margin-top: 50px;
         }
-        width: 100%;
-        border-top: 1px solid #f1f1f1;
+        width: 80%;
+        border-top: 1px solid #f1f1f14f;
         text-align: center;
         margin-right: 0;
-        padding: 20px 0;
+        padding: 25px 0;
     }
 `;
 export const NavButton = styled.div`
