@@ -28,7 +28,7 @@ const Header = () => {
             <Logo>Logo</Logo>
             <Nav>
                 {(toggleMenu || screenWidth > 600) && (
-                <NavList>
+                <NavList toggled={toggleMenu}>
                     <NavLink>Home</NavLink>
                     <NavLink>Services</NavLink>
                     <NavLink>Contact</NavLink>

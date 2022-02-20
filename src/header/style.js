@@ -33,10 +33,14 @@ export const NavList = styled.ul`
     transition: all .2s linear;
     
     @media screen and (max-width: 500px) {
+        position: fixed;
+        margin-top: 50px;
+        transform: ${({toggled}) => (toggled ? 'translateX(0%);':'translateX(100%);')};
+        visibility: ${({toggled}) => (toggled ? 'visible':'hidden')};
         flex-direction: column;
         height: 100vh;
+        width: 100vw;
         justify-content: start;  
-        transition: all .2s linear ;
     }
 
 `;
@@ -49,7 +53,6 @@ export const NavLink = styled.li`
     @media screen and (max-width: 500px) {
         &:nth-child(1){
             border-top: none;
-            margin-top: 50px;
         }
         width: 80%;
         border-top: 1px solid #f1f1f14f;
