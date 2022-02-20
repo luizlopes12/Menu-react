@@ -8,8 +8,10 @@ import {
 const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const [active, setActive] = useState(false)
     const toggleNav = () =>{
         setToggleMenu(!toggleMenu)
+        setActive(!active)
     }
     useEffect(() =>{
         const changeWidth = () =>{
@@ -25,7 +27,7 @@ const Header = () => {
         <>
             <Nav>
                 {(toggleMenu || screenWidth > 500) && (
-                <NavList toggleMenu={toggleMenu}>
+                <NavList>
                     <NavLink>Home</NavLink>
                     <NavLink>Services</NavLink>
                     <NavLink>Contact</NavLink>
