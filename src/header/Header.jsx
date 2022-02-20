@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
+    Container,
+    Logo,
     Nav,
     NavList,
     NavLink,
@@ -24,7 +26,8 @@ const Header = () => {
         }
     }, [])
     return (
-        <>
+        <Container>
+            <Logo>Logo</Logo>
             <Nav>
                 {(toggleMenu || screenWidth > 500) && (
                 <NavList>
@@ -37,7 +40,7 @@ const Header = () => {
                 }
                     <NavButton onClick={toggleNav}>BTN</NavButton>
             </Nav>
-        </>
+        </Container>
 
     );
 }

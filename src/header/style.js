@@ -1,11 +1,26 @@
 import styled from "styled-components";
 
-export const Nav = styled.nav`
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 50px;
+export const Container = styled.section`
     background-color: #0D2149;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+`;
+
+export const Logo = styled.div`
+    z-index: 999;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 10px;
+`;
+export const Nav = styled.nav`
+    top: 0;
+    height: 50px;
+    @media screen and (max-width: 500px) {
+        position: absolute;
+        width: 100vw;
+    }
 `;
 export const NavList = styled.ul`
     list-style: none;
