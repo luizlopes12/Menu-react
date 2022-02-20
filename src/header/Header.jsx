@@ -10,7 +10,6 @@ import {
 const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    
     const toggleNav = () =>{
         setToggleMenu(!toggleMenu)
     }
@@ -38,9 +37,9 @@ const Header = () => {
                 )
                 }
                     <NavButton onClick={toggleNav} toggled={toggleMenu}>
-                            <div class="line1"></div>
-                            <div class="line2"></div>
-                            <div class="line3"></div>
+                            <div className="line1"></div>
+                            <div className="line2"></div>
+                            <div className="line3"></div>
                     </NavButton>
             </Nav>
         </Container>

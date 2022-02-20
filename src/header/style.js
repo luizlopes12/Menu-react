@@ -36,13 +36,12 @@ export const NavList = styled.ul`
         flex-direction: column;
         height: auto;
         transition: all .2s linear;
-        ${({toggled}) => (toggled ? '':'transform: translateX(-100%);')}
+        ${({toggled}) => (toggled ? '':'transform: translateX(100%);')}
     }
 `;
 export const NavLink = styled.li`
     margin-right: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
+    font-size: 18px;
     color: #f1f1f1;
     cursor: pointer;
 
@@ -69,7 +68,7 @@ export const NavButton = styled.div`
         height: 2px;
         background-color: #fff;
         margin: 8px;
-        transition: .3s;
+        transition: .2s;
     }
     .line1{
         ${({toggled}) => (toggled ? 'transform: rotate(-45deg) translate(-8px, 8px);':'')}
