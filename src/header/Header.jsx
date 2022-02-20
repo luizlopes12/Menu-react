@@ -10,10 +10,9 @@ import {
 const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    const [active, setActive] = useState(false)
+    
     const toggleNav = () =>{
         setToggleMenu(!toggleMenu)
-        setActive(!active)
     }
     useEffect(() =>{
         const changeWidth = () =>{
@@ -30,7 +29,7 @@ const Header = () => {
             <Logo>Logo</Logo>
             <Nav>
                 {(toggleMenu || screenWidth > 500) && (
-                <NavList>
+                <NavList toggled={toggleMenu}>
                     <NavLink>Home</NavLink>
                     <NavLink>Services</NavLink>
                     <NavLink>Contact</NavLink>
@@ -38,7 +37,11 @@ const Header = () => {
                 </NavList>
                 )
                 }
-                    <NavButton onClick={toggleNav}>BTN</NavButton>
+                    <NavButton onClick={toggleNav} toggled={toggleMenu}>
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                    </NavButton>
             </Nav>
         </Container>
 
