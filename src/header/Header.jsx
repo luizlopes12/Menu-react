@@ -1,26 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
-    Header,
     Nav,
     NavList,
     NavLink,
     NavButton
 } from './style'
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false)
-    const handleMenu = () =>{
-        setMenuOpen(!menuOpen)
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const toggleNav = () =>{
+        setToggleMenu(!toggleMenu)
     }
+    useEffect(() =>{
+        const changeWidth = () =>{
+            setScreenWidth(window.innerWidth)
+        }
+        window.addEventListener('resize', changeWidth)
+
+        return () =>{
+            window.removeEventListener('resize', changeWidth)
+        }
+    }, [])
     return (
         <>
             <Nav>
-                <NavList>
+                {(toggleMenu || screenWidth > 500) && (
+                <NavList toggleMenu={toggleMenu}>
                     <NavLink>Home</NavLink>
                     <NavLink>Services</NavLink>
                     <NavLink>Contact</NavLink>
                     <NavLink>About us</NavLink>
                 </NavList>
-                    <NavButton>BTN</NavButton>
+                )
+                }
+                    <NavButton onClick={toggleNav}>BTN</NavButton>
             </Nav>
         </>
 
